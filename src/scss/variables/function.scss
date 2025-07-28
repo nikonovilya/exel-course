@@ -1,0 +1,14 @@
+// Template
+// @include image-set("Images/offer/img@1x.png", "Images/offer/img@2x.png");
+
+@function background-image-set($img1x, $img2x) {
+  @return image-set(
+    url("#{$img1x}") type("image/png") 1x,
+    url("#{$img2x}") type("image/png") 2x
+  );
+}
+
+@mixin image-set($img1x, $img2x) {
+  background-image: url($img1x);
+  background-image: background-image-set($img1x, $img2x);
+}

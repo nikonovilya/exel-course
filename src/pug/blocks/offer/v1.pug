@@ -1,0 +1,17 @@
+section#offer.offer
+  .container
+    .offer__wrapper
+      h1.offer__title.title !{DATA("offer.text1")}
+      .offer__picture
+        +pictureBlock(
+          require("Images/offer/img@1x.png"),
+          require("Images/offer/img@2x.png"),
+          require("Images/offer/img@1x.png?as=avif"),
+          require("Images/offer/img@2x.png?as=avif"),
+          846,
+          839,
+          "Art" 
+        )
+        .icon
+          +svgSprite(require("Images/sprite.svg"), "arrow")
+        .imgtest

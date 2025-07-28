@@ -1,0 +1,20 @@
+-
+  lang = lang || 'en'
+
+  const i18next = require('i18next');
+  const DATA = (key) => i18next.t(key);
+  const DATA_ORIGIN = require('Locales/en.json');
+  const LANGUAGES = require('Locales/variables/languages.json');
+  const DEFAULT_LANG = 'en';
+
+  i18next.init({
+    lng: DEFAULT_LANG,
+    fallbackLng: DEFAULT_LANG,
+    supportedLngs: ['default', ...LANGUAGES.map(lang => lang.code)],
+    resources: {
+      default: { translation: require('Locales/en.json') },
+      en: { translation: require('Locales/en.json') },
+    },
+  });
+
+  i18next.changeLanguage(lang);

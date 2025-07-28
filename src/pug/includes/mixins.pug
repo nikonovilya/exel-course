@@ -1,0 +1,34 @@
+mixin pictureBlock(img1xPng, img2xPng, img1xAvif, img2xAvif, width, height, alt)
+  picture
+    source(
+      type="image/avif"
+      srcset=`${img1xAvif} 1x, ${img2xAvif} 2x`
+    )
+    source(
+      type="image/png"
+      srcset=`${img1xPng} 1x, ${img2xPng} 2x`
+    )
+    img(
+      loading="lazy"
+      src=img1xPng
+      srcset=`${img1xPng} 1x, ${img2xPng} 2x`
+      width=width
+      height=height
+      alt=alt
+    )
+
+mixin svgSprite(spritePath, iconId)
+  svg(aria-hidden="true" focusable="false")
+    use(href=`${spritePath}#${iconId}`)
+
+mixin currentLanguage()
+  - const locale = DATA('locale')
+  - let langName = DEFAULT_LANG
+
+  - for (let i = 0; i < LANGUAGES.length; i++) {
+  -   if (LANGUAGES[i].code === locale) {
+  -     langName = LANGUAGES[i].name
+  -     break
+  -   }
+  - }
+  = langName

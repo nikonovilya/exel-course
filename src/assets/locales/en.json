@@ -1,0 +1,44 @@
+{
+  "domain": "https://exel-course.com/",
+  "locale": "en",
+  "meta": {
+    "title": {
+      "index": "Exel Course",
+      "404": "Page not found"
+    },
+    "description": "Description empty project",
+    "keywords": "keywords, keywords, keywords",
+    "url": {
+      "index": "https://exel-course.com/",
+      "404": "https://exel-course.com/404"
+    },
+    "locale": "en__EN"
+  },
+  "nav1": {
+    "list1": [
+      {
+        "text1": "Audio"
+      },
+      {
+        "text1": "Video"
+      },
+      {
+        "text1": "Link2222"
+      }
+    ]
+  },
+  "buttons": {
+    "text1": "Back"
+  },
+  "header": {
+    "text1": "Header"
+  },
+  "offer": {
+    "text1": "Hello World!"
+  },
+  "fail": {
+    "text1": "Page not found",
+    "text2": "The requested URL was&nbsp;not&nbsp;found on&nbsp;this server"
+  },
+  "copyright": "All right reserved"
+}
