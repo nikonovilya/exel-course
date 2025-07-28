@@ -1,0 +1,63 @@
+@use 'Styles/variables/colors' as *;
+@use 'Styles/variables/sizes' as *;
+
+.table {
+  position: absolute;
+  top: $headerHeight + $toolbarHeight + $formulaHeight;
+  left: 0;
+  right: 0;
+  overflow-x: auto;
+  padding-bottom: 2px;
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    height: $rowHeight;
+    min-height: 20px;
+  }
+  .row-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: $infoCellWidth;
+    height: 100%;
+    border: 1px solid $gray;
+    border-top: 0;
+    background-color: $gray-bg;
+  }
+
+  .row-data {
+    display: flex;
+  }
+
+  .column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $gray-bg;
+    min-width: 40px;
+    width: $cellWidth;
+    border: 1px solid $gray;
+    border-top: 0;
+    border-left: 0;
+  }
+
+  .cell {
+    min-width: 40px;
+    width: $cellWidth;
+    height: 100%;
+    padding: 5px;
+    border: 1px solid $gray-border;
+    border-top: 0;
+    border-left: 0;
+    color: $text;
+    white-space: nowrap;
+    outline: none;
+
+    &.selected {
+      border-color: transparent;
+      outline: 2px solid $blue;
+      z-index: 2;
+    }
+  }
+}

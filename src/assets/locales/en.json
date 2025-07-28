@@ -33,8 +33,9 @@
   "header": {
     "text1": "Header"
   },
-  "offer": {
-    "text1": "Hello World!"
+  "dashboard": {
+    "text1": "Exel Dashboard",
+    "text2": "Create new table"
   },
   "fail": {
     "text1": "Page not found",

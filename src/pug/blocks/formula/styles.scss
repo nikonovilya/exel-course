@@ -1,0 +1,38 @@
+@use 'Styles/variables/colors' as *;
+@use 'Styles/variables/sizes' as *;
+
+.formula {
+  position: absolute;
+  top: $headerHeight + $toolbarHeight;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  height: $formulaHeight;
+  border-bottom: 1px solid $gray;
+
+  .info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    border-right: 1px solid $gray;
+    min-width: $infoCellWidth;
+    height: 100%;
+    color: $gray;
+  }
+
+  .input {
+    padding: 4px;
+    font-size: 12px;
+    line-height: 1;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    color: $dark;
+  }
+}

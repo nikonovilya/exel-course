@@ -1,0 +1,62 @@
+@use 'Styles/variables/colors' as *;
+@use 'Styles/variables/sizes' as *;
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $headerHeight;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 4px 8px;
+
+  .input {
+    margin: 0;
+    padding: 2px 7px;
+    color: $dark;
+    border: 2px solid transparent;
+    font-size: 18px;
+    line-height: 22px;
+    outline: none;
+
+    &:hover {
+      border-color: $gray;
+    }
+
+    &:focus {
+      border-color: $blue;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 24px;
+    width: 24px;
+    min-width: 24px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+
+    &:hover {
+      background-color: $gray-light;
+    }
+
+    &:active,
+    &.active {
+      color: $error;
+    }
+
+    i {
+      font-size: 18px;
+    }
+  }
+}

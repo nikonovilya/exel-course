@@ -1,3 +1,6 @@
-@forward "Blocks/offer/styles";
-
+@forward 'Blocks/header/styles.scss';
+@forward 'Blocks/toolbar/styles.scss';
+@forward 'Blocks/formula/styles.scss';
+@forward 'Blocks/table/styles.scss';
+@forward 'Blocks/dashboard/styles.scss';
 @forward "Styles/overall/state";
