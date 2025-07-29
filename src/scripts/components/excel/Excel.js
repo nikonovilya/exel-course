@@ -1,18 +1,20 @@
 import { ExelComponent } from 'Scripts/core/ExelComponent';
+import { $ } from 'Scripts/core/dom';
 
 export class Exel {
   constructor(selector, options = {}) {
-    this.$el = document.querySelector(selector);
+    this.$el = $(selector);
     this.components = options.components || [];
   }
 
   getRoot() {
-    const $root = document.createElement('div');
-    $root.classList.add('exel');
+    const $root = $.create('div', 'excel');
 
     this.components.forEach((Component) => {
-      const component = new Component(this.$el, {});
-      $root.insertAdjacentHTML('beforeend', component.toHTML());
+      const $el = $.create('div', Component.className);
+      const component = new Component($el, {});
+      $el.html(component.toHTML());
+      $root.append($el);
     });
 
     return $root;
