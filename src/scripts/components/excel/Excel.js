@@ -1,4 +1,3 @@
-import { ExelComponent } from 'Scripts/core/ExelComponent';
 import { $ } from 'Scripts/core/dom';
 
 export class Exel {
