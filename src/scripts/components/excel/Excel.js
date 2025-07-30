@@ -1,21 +1,25 @@
-import { ExelComponent } from 'Scripts/core/ExelComponent';
 import { $ } from 'Scripts/core/dom';
+import { Emitter } from 'Scripts/core/Emitter';
 
 export class Exel {
   constructor(selector, options = {}) {
     this.$el = $(selector);
     this.components = options.components || [];
+    this.emitter = new Emitter();
   }
 
   getRoot() {
     const $root = $.create('div', 'excel');
+    const componentOptions = {
+      emitter: this.emitter,
+    };
 
     this.components = this.components.map((Component) => {
       const $el = $.create('div', Component.className);
-      const component = new Component($el, {});
+      const component = new Component($el, componentOptions);
       $el.html(component.toHTML());
       $root.append($el);
-      return component
+      return component;
     });
 
     return $root;
@@ -23,8 +27,14 @@ export class Exel {
 
   render() {
     this.$el.append(this.getRoot());
-    this.components.forEach(component => {
+    this.components.forEach((component) => {
       component.init();
+    });
+  }
+
+  destroy() {
+    this.components.forEach((component) => {
+      component.destroy();
     });
   }
 }
